@@ -222,6 +222,65 @@ main {
 }
 
 /* =========================
+   SERVIÇOS
+========================= */
+.servicos {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.servicos h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--preto);
+}
+
+.box-servicos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card-servico {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    height: 250px;
+    background-color: var(--cinza-card);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 0;
+    border-radius: 10px;
+    transition: background 0.3s;
+    box-sizing: border-box;
+}
+
+.card-servico i {
+    font-size: 50px;
+    color: var(--azul-principal);
+    margin: 0 auto;
+}
+
+.card-servico h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--preto);
+    text-align: center;
+}
+
+.card-servico p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #000000b6;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* =========================
    DEPOIMENTOS
 ========================= */
 .depoimentos {
@@ -465,6 +524,17 @@ footer span {
         align-items: center;
     }
 
+    .box-servicos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-servico {
+        width: 100%;
+        max-width: 100%;
+        height: 250px;
+    }
+
     .depoimento-cliente {
         flex-direction: column;
         align-items: center;
@@ -476,6 +546,7 @@ footer span {
     }
 
     .sobre h2,
+    .servicos h2,
     .depoimentos h2,
     .contato h2 {
         text-align: center;
@@ -505,8 +576,13 @@ footer span {
     }
 
     .container {
-        flex-direction: column;
-        padding: 20px 0;
+        background-color: var(--cinza-card);
+
+    }
+
+    .depoimento-cliente {
+        width: 100%;
+        height: auto;
     }
 
     .chamada-agencia h1 {
