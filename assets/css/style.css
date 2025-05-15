@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+/* =========================
+   VARIÁVEIS DE CORES
+========================= */
+:root {
+    --azul-principal: #4A90E2;
+    --azul-hover: #7dabdf;
+    --cinza-fundo: #f4f4f4;
+    --cinza-card: #e2e2e283;
+    --preto: #000;
+    --branco: #fff;
+    --cinza-borda: #858585;
+    --cinza-placeholder: #707070;
+}
+
+/* =========================
+   RESET E BASE
+========================= */
+@import url('fonts.css');
 
 * {
     margin: 0;
@@ -8,26 +25,35 @@
     text-decoration: none;
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
-    max-width: 1000px;
-    padding: 0 10px;
-    margin: 0 auto;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--cinza-fundo);
+}
+
+/* =========================
+   HEADER
+========================= */
 header {
-    color: #fff;
+    color: var(--branco);
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1000px;
+    padding: 40px 10px;
+    margin: 0 auto;
 }
 
 header #logo {
     font-size: 2rem;
-    font-weight: 700;
-    color: #000;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--preto);
+    font-family: "Lavishly Yours", cursive;
 }
 
 header nav ul {
@@ -36,19 +62,23 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: #000;
+    color: var(--preto);
     text-transform: uppercase;
     font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #4A90E2;
-    border-bottom: 1px solid #000;
+    color: var(--azul-principal);
+    border-bottom: 1px solid var(--preto);
 }
 
+/* =========================
+   MENU MOBILE
+========================= */
 #mobile {
     display: none;
-    background-color: #000000;
+    background-color: var(--preto);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -66,31 +96,352 @@ header nav ul li a:hover {
 }
 
 #mobile ul li a {
-    color: #fff;
-
+    color: var(--branco);
     text-transform: uppercase;
     font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 #mobile ul li a:hover {
-    color: #4A90E2;
-    border-bottom: 1px solid #fff;
+    color: var(--azul-principal);
+    border-bottom: 1px solid var(--branco);
 }
 
 #menu-mobile {
     display: none;
     font-size: 30px;
     font-weight: bold;
-    color: #4A90E2;
+    color: var(--azul-principal);
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
-    background-color: #ffffff00;
+    background-color: transparent;
     z-index: 10;
     border: 0;
+    transition: color 0.3s;
 }
 
+/* =========================
+   CONTAINER E LAYOUT
+========================= */
+main {
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+/* =========================
+   CHAMADA AGÊNCIA
+========================= */
+.chamada-agencia h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: var(--preto);
+}
+
+.chamada-agencia p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000b6;
+    margin: 20px 0;
+}
+
+.chamada-agencia button,
+.contato button,
+.depoimentos button {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+
+    margin-top: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.chamada-agencia button:hover,
+.contato button:hover,
+.depoimentos button:hover {
+    background-color: var(--azul-hover);
+    color: var(--preto);
+}
+
+.chamada-agencia a {
+    text-decoration: none;
+    color: var(--branco);
+    padding: 15px 20px;
+    display: block;
+}
+
+/* =========================
+   IMAGEM DESTAQUE
+========================= */
+.imagem-destaque img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   SOBRE
+========================= */
+.sobre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    height: 100%;
+    background-color: rgba(245, 245, 220, 0.466);
+}
+
+.sobre h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--preto);
+}
+
+.sobre p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #000000b6;
+    margin: 20px 0;
+}
+
+/* =========================
+   DEPOIMENTOS
+========================= */
+.depoimentos {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.depoimentos h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--preto);
+}
+
+.depoimento-cliente {
+    width: 100%;
+    height: 250px;
+    background-color: var(--cinza-card);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 50px auto 0 auto;
+    padding: 30px 0;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.foto-cliente {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--preto);
+}
+
+.depoimento-cliente p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #000000b6;
+    margin: 20px 0;
+    max-width: 400px;
+}
+
+.box-cliente h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    text-transform: capitalize;
+    color: var(--preto);
+}
+
+.box-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.box-btn button {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* =========================
+   FORMULÁRIO DE CONTATO
+========================= */
+.contato {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.contato h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 30px 0;
+    text-transform: uppercase;
+    color: var(--preto);
+}
+
+form {
+    width: 100%;
+}
+
+.box-input {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+input,
+textarea {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid var(--cinza-borda);
+    background-color: rgba(245, 245, 220, 0.466);
+    outline: none;
+    padding: 10px;
+}
+
+input {
+    width: 50%;
+}
+
+input::placeholder {
+    color: var(--cinza-placeholder);
+}
+
+.contato textarea {
+    margin-top: 20px;
+    width: 100%;
+    resize: vertical;
+}
+
+.contato button {
+    float: right;
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: normal;
+    border-radius: 10px;
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* =========================
+   FOOTER E REDES SOCIAIS
+========================= */
+footer {
+    background-color: var(--azul-principal);
+    padding-top: 30px;
+    margin-top: 40px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    position: static;
+}
+
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons li a.icon {
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--branco);
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background-color: var(--branco);
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    margin: 0 10px;
+    display: block;
+    color: #262626;
+    border: 1px solid var(--preto);
+    transition: .5s;
+}
+
+.social-icons li a.icon:hover {
+    color: var(--branco);
+    transform: rotateY(360deg);
+}
+
+.social-icons li a.icon::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--azul-hover);
+    transition: .5s;
+    z-index: 2;
+}
+
+.social-icons li a.icon:hover::before {
+    top: 0;
+}
+
+.social-icons li a.icon i {
+    position: relative;
+    z-index: 3;
+}
+
+footer span {
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: var(--branco);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
 @media (max-width: 768px) {
     header {
         justify-content: center;
@@ -117,217 +468,20 @@ header nav ul li a:hover {
     .depoimento-cliente {
         flex-direction: column;
         align-items: center;
+        height: 400px;
     }
 
-    .box-cliente,
-    .depoimentos,
-    .contato h2 {
+    .box-cliente h3 {
         text-align: center;
     }
-}
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 0;
-}
+    .sobre h2,
+    .depoimentos h2,
+    .contato h2 {
+        text-align: center;
+        font-size: 2rem;
+    }
 
-.chamada-agencia h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #000;
-}
-
-.chamada-agencia p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #000000b6;
-    margin: 20px 0;
-}
-
-.chamada-agencia button {
-    background-color: #4A90E2;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.imagem-destaque img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-
-}
-
-.sobre {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 0;
-    height: 100%;
-    background-color: rgba(245, 245, 220, 0.466);
-}
-
-.sobre h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #000;
-
-}
-
-.sobre p {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #000000b6;
-    margin: 20px 0;
-}
-
-.depoimentos {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(245, 245, 220, 0.466);
-    padding: 50px 0;
-}
-
-.depoimentos h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #000;
-}
-
-.depoimento-cliente {
-    width: 100%;
-    max-width: 700px;
-    background-color: #e2e2e283;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 50px auto 0 auto;
-    padding: 30px 0;
-    border-radius: 10px;
-}
-
-.foto-cliente {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-image: url(../image/02.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    border: 1px solid #000000;
-}
-
-.box-cliente p {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #000000b6;
-    margin: 20px 0;
-}
-
-.box-cliente h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: capitalize;
-    color: #000;
-}
-
-.box-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-}
-
-.depoimentos button {
-    background-color: #4A90E2;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-
-    border: none;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.contato {
-    display: flex;
-    flex-direction: column;
-
-    padding: 50px 0;
-}
-
-.contato h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    padding: 30px 0;
-    text-transform: uppercase;
-    color: #000;
-}
-
-form {
-    width: 100%;
-}
-
-.box-input {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-
-}
-
-input {
-    width: 50%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #858585;
-    font-size: 1.2rem;
-    background-color: rgba(245, 245, 220, 0.466);
-}
-
-input::placeholder {
-    color: #707070;
-}
-
-.contato textarea {
-    margin-top: 20px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #858585;
-    font-size: 1.2rem;
-    background-color: rgba(245, 245, 220, 0.466);
-}
-
-.contato button {
-    background-color: #4A90E2;
-    color: #fff;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-    float: right;
-}
-
-@media (max-width: 768px) {
     .box-input {
         flex-direction: column;
         width: 100%;
@@ -335,7 +489,7 @@ input::placeholder {
     }
 
     input {
-        width: 100%;
+        width: 100% !important;
     }
 
     .contato button {
@@ -344,84 +498,18 @@ input::placeholder {
         margin: 20px auto 0 auto;
         text-align: center;
     }
-}
 
+    .depoimento-cliente p {
+        max-width: 100%;
+        text-align: center;
+    }
 
-footer {
-    background-color: rgba(245, 245, 220, 0.466);
+    .container {
+        flex-direction: column;
+        padding: 20px 0;
+    }
 
-    margin-top: 40px;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    gap: 20px;
-    position: static;
-
-    top: auto;
-    left: auto;
-    transform: none;
-}
-
-.social-icons li {
-    list-style: none;
-}
-
-.social-icons li a.icon {
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    border: 3px solid #fff;
-    z-index: 1;
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    margin: 0 10px;
-    display: block;
-    color: #262626;
-    border: 1px solid rgb(0, 0, 0);
-    transition: .5s;
-}
-
-.social-icons li a.icon:hover {
-    color: #fff;
-    transform: rotateY(360deg);
-}
-
-.social-icons li a.icon::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #4A90E2;
-    transition: .5s;
-    z-index: 2;
-}
-
-.social-icons li a.icon:hover::before {
-    top: 0;
-}
-
-.social-icons li a.icon i {
-    position: relative;
-    z-index: 3;
-}
-
-footer span {
-    display: block;
-    text-align: center;
-    padding: 5px 0;
-    margin-top: 30px;
-    font-size: 1rem;
-    color: #000;
+    .chamada-agencia h1 {
+        font-size: 2rem;
+    }
 }

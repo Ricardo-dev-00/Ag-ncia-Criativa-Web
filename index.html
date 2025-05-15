@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importa os ícones do Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Importa o CSS principal do projeto -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Metadados para SEO -->
     <meta name="description"
         content="Agência Criativa Web especializada em desenvolvimento de sites modernos, responsivos e criativos utilizando HTML e CSS. Veja nossos trabalhos e projetos.">
     <meta name="keywords"
         content="agência web, desenvolvimento web, sites responsivos, HTML, CSS, design criativo, projetos web, criação de sites">
+    <link rel="icon" type="image/x-icon" href="assets/image/ico.ico">
+    <meta property="og:image"
+        content="https://ricardo-dev-00.github.io/Ag-ncia-Criativa-Web//assets/image/thumbnail.jpg">
     <meta name="author" content="Ricardo Vieira">
     <meta name="robots" content="index, follow">
     <title>Agência Criativa Web</title>
@@ -17,88 +23,80 @@
 
 <body>
     <header>
-        <a id="logo" href="">Agência Criativa Web</a>
+        <!-- Logo da agência -->
+        <a id="logo" href="index.html">Criativa Web</a>
+        <!-- Menu de navegação desktop -->
         <nav>
             <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">sobre</a></li>
-                <li><a href="">depoimentos</a></li>
-                <li><a href="">contato</a></li>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#sobre">sobre</a></li>
+                <li><a href="#depoimentos">depoimentos</a></li>
+                <li><a href="#contato">contato</a></li>
             </ul>
         </nav>
-        <!-- No seu botão do menu mobile -->
+        <!-- Botão do menu mobile (hambúrguer) -->
         <button onclick="menuMobile()" id="menu-mobile">
             <i class="fas fa-bars"></i>
         </button>
+        <!-- Menu mobile (aparece em telas pequenas) -->
         <nav id="mobile">
             <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">sobre</a></li>
-                <li><a href="">depoimentos</a></li>
-                <li><a href="">contato</a></li>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#sobre">sobre</a></li>
+                <li><a href="#depoimentos">depoimentos</a></li>
+                <li><a href="#contato">contato</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <!-- Seção principal com chamada e imagem -->
         <section class="container">
             <section>
                 <div class="chamada-agencia">
                     <h1>design <br> digital para <br> impactar</h1>
                     <p>Somos uma agéncia apaixonada <br> por criar experiéncias digitais <br> incliveis.</p>
-                    <button>entre em contato</button>
+                    <button><a href="#contato">entre em contato</a> </button>
                 </div>
             </section>
-
             <section class="imagem-destaque">
                 <img src="assets/image/img.png" alt="">
             </section>
         </section>
-        <sention class="sobre">
-
+        <!-- Seção sobre a agência -->
+        <sention class="sobre" id="sobre">
             <h2>sobre nós</h2>
-
-
             <p>Combinamos criatividade, tecnologia e <br> estrategia para tranformar ideias em <br> realidade. Nossa
                 missão é ajudar nossos <br> clientes a alcançar seus objetivos <br> atraves de soluçoes digitais
-                inovadores.</p>
+                inovadoras.</p>
         </sention>
-        <section class="depoimentos">
+        <!-- Seção de depoimentos com carrossel -->
+        <section class="depoimentos" id="depoimentos">
             <h2>depoimentos</h2>
-            <div class="depoimento-cliente">
-                <div class="foto-cliente"></div>
-                <div class="box-cliente">
-                    <p>"A equipe superou todas as expectativas. Trabalho <br> de alta qualidade e atenção aos detalhes.
-                        "</p>
-                    <h3>Paola fernandes</h3>
-                </div>
-
+            <div class="depoimento-cliente" id="depoimento-cliente">
+                <!-- O JS vai preencher aqui -->
             </div>
             <div class="box-btn">
-                <button id="voltar"></button>
-                <button id="proximo"></button>
+                <button id="voltar"><i class="fas fa-chevron-left"></i></button>
+                <button id="proximo"><i class="fas fa-chevron-right"></i></button>
             </div>
-
         </section>
-
-        <section class="contato">
-            <h2>contato</h2>
+        <!-- Seção de contato com formulário -->
+        <section class="contato" id="contato">
+            <h2>Entre em contato</h2>
             <form action="">
                 <div class="box-input">
-                    <input type="text" placeholder="Nome">
-                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="Email" required>
                 </div>
-
-
-                <textarea name="" id="" cols="30" rows="10" placeholder="Mensagem"></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Mensagem" required></textarea>
                 <button type="submit">enviar mensagem</button>
             </form>
         </section>
     </main>
+    <!-- Rodapé com redes sociais e direitos autorais -->
     <footer class="footer">
         <div class="footer-container">
-
             <div class="footer-social">
-
                 <ul class="social-icons">
                     <li>
                         <a href="#" class="icon" aria-label="Instagram">
@@ -120,7 +118,9 @@
         </div>
         <span>&copy; 2025 Agência Criativa Web. Todos os direitos reservados.</span>
     </footer>
-    <script src="assets/js/app.js"></script>
+    <!-- Scripts JS do menu mobile e depoimentos -->
+    <script src="assets/js/menu-mobile.js"></script>
+    <script src="assets/js/depoimentos.js"></script>
 </body>
 
 </html>
