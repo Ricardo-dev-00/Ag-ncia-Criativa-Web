@@ -24,10 +24,10 @@ let intervalo;       // Referência do intervalo do carrossel automático
 function mostrarDepoimento(indice) {
     const depoimento = depoimentos[indice];
     document.getElementById("depoimento-cliente").innerHTML = `
-        <div class="foto-cliente" style="background-image: url('${depoimento.foto}')"></div>
-        <div class="box-cliente">
-            <p>${depoimento.texto}</p>
-            <h3>${depoimento.nome}</h3>
+        <div class="depoimentos__foto" style="background-image: url('${depoimento.foto}')"></div>
+        <div class="depoimentos__box">
+            <p class="depoimentos__texto">${depoimento.texto}</p>
+            <h3 class="depoimentos__nome">${depoimento.nome}</h3>
         </div>
     `;
 }

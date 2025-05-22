@@ -35,53 +35,65 @@ body {
 }
 
 /* =========================
-   HEADER
+   HEADER (BEM)
 ========================= */
-header {
+.header {
     color: var(--branco);
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1000px;
-    padding: 40px 10px;
     margin: 0 auto;
+    position: relative;
 }
 
-header #logo {
+.header__logo {
     font-size: 2rem;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--preto);
     font-family: "Lavishly Yours", cursive;
+    color: var(--preto);
+    text-decoration: none;
 }
 
-header nav ul {
+.header__nav {
+    display: flex;
+}
+
+.header__menu {
     display: flex;
     gap: 20px;
 }
 
-header nav ul li a {
+.header__menu-link {
     color: var(--preto);
     text-transform: uppercase;
     font-weight: bold;
     transition: color 0.3s, border-bottom 0.3s;
 }
 
-header nav ul li a:hover {
+.header__menu-link:hover {
     color: var(--azul-principal);
     border-bottom: 1px solid var(--preto);
 }
 
-/* =========================
-   MENU MOBILE
-========================= */
-#mobile {
+.header__menu-mobile-btn {
+    display: none;
+    font-size: 30px;
+    color: var(--azul-principal);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.header__nav-mobile {
     display: none;
     background-color: var(--preto);
     position: absolute;
     top: 0;
-    bottom: 0;
     right: 0;
     min-height: 100vh;
     padding: 100px 80px;
@@ -90,75 +102,56 @@ header nav ul li a:hover {
     text-align: center;
 }
 
-#mobile ul {
+.header__menu-mobile {
+    display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-#mobile ul li a {
+.header__menu-mobile .header__menu-link {
     color: var(--branco);
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: color 0.3s, border-bottom 0.3s;
 }
 
-#mobile ul li a:hover {
+.header__menu-mobile .header__menu-link:hover {
     color: var(--azul-principal);
     border-bottom: 1px solid var(--branco);
 }
 
-#menu-mobile {
-    display: none;
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--azul-principal);
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    background-color: transparent;
-    z-index: 10;
-    border: 0;
-    transition: color 0.3s;
-}
-
 /* =========================
-   CONTAINER E LAYOUT
+   MAIN E HERO
 ========================= */
-main {
+.main {
     max-width: 1000px;
     padding: 0 10px;
     margin: 0 auto;
 }
 
-.container {
+.main__hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px 0;
+    gap: 40px;
 }
 
-/* =========================
-   CHAMADA AGÊNCIA
-========================= */
-.chamada-agencia h1 {
+.main__hero-content {
+    flex: 1;
+}
+
+.main__hero-title {
     font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
-
     color: var(--preto);
 }
 
-.chamada-agencia p {
+.main__hero-text {
     font-size: 1.5rem;
-    font-weight: 400;
     color: #000000b6;
     margin: 20px 0;
 }
 
-.chamada-agencia button,
-.contato button,
-.depoimentos button {
+.main__hero-btn {
     background-color: var(--azul-principal);
     color: var(--branco);
     border: none;
@@ -167,329 +160,305 @@ main {
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
-
-    margin-top: 20px;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
     transition: background 0.3s, color 0.3s;
 }
 
-.chamada-agencia button:hover,
-.contato button:hover,
-.depoimentos button:hover {
+.main__hero-btn:hover {
     background-color: var(--azul-hover);
     color: var(--preto);
 }
 
-.chamada-agencia a {
-    text-decoration: none;
-    color: var(--branco);
-    padding: 15px 20px;
-    display: block;
-}
-
-/* =========================
-   IMAGEM DESTAQUE
-========================= */
-.imagem-destaque img {
-    max-width: 100%;
+.main__hero-image img {
+    max-width: 350px;
+    width: 100%;
     height: auto;
     display: block;
+    border-radius: 10px;
 }
 
 /* =========================
-   SOBRE
+   ABOUT
 ========================= */
-.sobre {
+.about {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px 0;
-    height: 100%;
     background-color: rgba(245, 245, 220, 0.466);
+    text-align: center;
 }
 
-.sobre h2 {
+.about__title {
     font-size: 2.5rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--preto);
 }
 
-.sobre p {
+.about__text {
     font-size: 1.2rem;
-    font-weight: 400;
     color: #000000b6;
     margin: 20px 0;
 }
 
 /* =========================
-   SERVIÇOS
+   SERVICES
 ========================= */
-.servicos {
-    display: flex;
-    flex-direction: column;
-    padding: 30px 0;
+.services {
+    padding: 50px 0;
 }
 
-.servicos h2 {
+.services__title {
     font-size: 2.5rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--preto);
+    text-align: center;
 }
 
-.box-servicos {
+.services__list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 30px;
+    justify-content: center;
+    margin-top: 40px;
 }
 
-.card-servico {
-    flex: 1 1 calc(50% - 20px);
+.services__card {
+    flex: 0 1 calc(50% - 20px);
     max-width: calc(50% - 20px);
-    height: 250px;
+    min-width: 260px;
     background-color: var(--cinza-card);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 30px 0;
+    padding: 30px 10px;
     border-radius: 10px;
     transition: background 0.3s;
     box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.card-servico i {
+.services__icon {
     font-size: 50px;
     color: var(--azul-principal);
-    margin: 0 auto;
 }
 
-.card-servico h3 {
+.services__card-title {
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: capitalize;
     color: var(--preto);
-    text-align: center;
 }
 
-.card-servico p {
+.services__card-text {
     font-size: 1.2rem;
-    font-weight: 400;
     color: #000000b6;
-    margin: 20px 0;
-    text-align: center;
 }
 
 /* =========================
    DEPOIMENTOS
 ========================= */
 .depoimentos {
-    display: flex;
-    flex-direction: column;
     padding: 50px 0;
+    text-align: center;
 }
 
-.depoimentos h2 {
+.depoimentos__titulo {
     font-size: 2.5rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--preto);
 }
 
-.depoimento-cliente {
+.depoimentos__conteudo {
     width: 100%;
-    height: 250px;
+    height: 300px;
     background-color: var(--cinza-card);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin: 50px auto 0 auto;
+    margin: 40px auto 0 auto;
     padding: 30px 0;
     border-radius: 10px;
     transition: background 0.3s;
+    flex-direction: column;
 }
 
-.foto-cliente {
-    width: 100px;
-    height: 100px;
+.depoimentos__foto {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    border: 1px solid var(--preto);
+    margin: 0 auto 20px auto;
+    border: 3px solid var(--azul-principal);
+    box-shadow: 0 2px 8px #0001;
 }
 
-.depoimento-cliente p {
+.depoimentos__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.depoimentos__texto {
     font-size: 1.2rem;
-    font-weight: 400;
     color: #000000b6;
-    margin: 20px 0;
-    max-width: 400px;
+    margin-bottom: 10px;
 }
 
-.box-cliente h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-
-    text-transform: capitalize;
+.depoimentos__nome {
+    font-size: 1.1rem;
+    font-weight: bold;
     color: var(--preto);
 }
 
-.box-btn {
+.depoimentos__controles {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
+    margin-top: 20px;
 }
 
-.box-btn button {
+.depoimentos__btn {
     background-color: var(--azul-principal);
     color: var(--branco);
     border: none;
     border-radius: 20px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-size: 1.2rem;
     cursor: pointer;
     padding: 10px 20px;
     transition: background 0.3s, color 0.3s;
 }
 
-/* =========================
-   FORMULÁRIO DE CONTATO
-========================= */
-.contato {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 0;
-}
-
-.contato h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    padding: 30px 0;
-    text-transform: uppercase;
+.depoimentos__btn:hover {
+    background-color: var(--azul-hover);
     color: var(--preto);
 }
 
-form {
-    width: 100%;
+/* =========================
+   CONTATO
+========================= */
+.contact {
+    padding: 50px 0;
+    text-align: center;
 }
 
-.box-input {
+.contact__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--preto);
+    margin-bottom: 30px;
+}
+
+.contact__form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact__inputs {
     display: flex;
     gap: 20px;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-input,
-textarea {
+.contact__input,
+.contact__textarea {
     font-size: 1.2rem;
     border-radius: 10px;
     border: 1px solid var(--cinza-borda);
     background-color: rgba(245, 245, 220, 0.466);
     outline: none;
     padding: 10px;
-}
-
-input {
-    width: 50%;
-}
-
-input::placeholder {
-    color: var(--cinza-placeholder);
-}
-
-.contato textarea {
-    margin-top: 20px;
     width: 100%;
-    resize: vertical;
+
 }
 
-.contato button {
-    float: right;
-    margin-top: 20px;
-    padding: 15px 20px;
-    font-size: 1rem;
-    font-weight: normal;
-    border-radius: 10px;
+.contact__input {
+    flex: 1 1 45%;
+}
+
+.contact__textarea {
+    resize: vertical;
+    min-height: 100px;
+    resize: none;
+}
+
+.contact__submit {
     background-color: var(--azul-principal);
     color: var(--branco);
     border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    padding: 15px 20px;
     transition: background 0.3s, color 0.3s;
+    align-self: flex-end;
+}
+
+.contact__submit:hover {
+    background-color: var(--azul-hover);
+    color: var(--preto);
 }
 
 /* =========================
-   FOOTER E REDES SOCIAIS
+   FOOTER
 ========================= */
-footer {
+.footer {
     background-color: var(--azul-principal);
     padding-top: 30px;
     margin-top: 40px;
+    text-align: center;
 }
 
-.social-icons {
+.footer__container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.footer__social {
+    display: flex;
+    gap: 20px;
     padding: 0;
     margin: 0;
-    gap: 20px;
-    position: static;
 }
 
-.social-icons li {
-    list-style: none;
-}
-
-.social-icons li a.icon {
+.footer__icon {
     border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    border: 3px solid var(--branco);
-    z-index: 1;
+    border: 2px solid var(--branco);
     width: 40px;
     height: 40px;
     background-color: var(--branco);
     text-align: center;
     line-height: 40px;
     font-size: 20px;
-    margin: 0 10px;
-    display: block;
     color: #262626;
-    border: 1px solid var(--preto);
+    display: block;
     transition: .5s;
 }
 
-.social-icons li a.icon:hover {
-    color: var(--branco);
+.footer__icon:hover {
+    color: var(--azul-principal);
+    background: var(--branco);
+    border-color: var(--azul-hover);
     transform: rotateY(360deg);
 }
 
-.social-icons li a.icon::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--azul-hover);
-    transition: .5s;
-    z-index: 2;
-}
-
-.social-icons li a.icon:hover::before {
-    top: 0;
-}
-
-.social-icons li a.icon i {
-    position: relative;
-    z-index: 3;
-}
-
-footer span {
+.footer__copyright {
     display: block;
     text-align: center;
     padding: 5px 0;
@@ -501,91 +470,97 @@ footer span {
 /* =========================
    RESPONSIVIDADE
 ========================= */
+@media (max-width: 900px) {
+    .main__hero {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .main__hero-image img {
+        max-width: 100%;
+    }
+
+    .services__list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media (max-width: 768px) {
-    header {
-        justify-content: center;
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 10px;
     }
 
-    header #logo {
-        margin-top: 20px;
-    }
-
-    #menu-mobile {
-        display: block;
-    }
-
-    header nav,
-    .imagem-destaque {
+    .header__nav {
         display: none;
     }
 
-    .sobre {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .box-servicos {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card-servico {
-        width: 100%;
-        max-width: 100%;
-        height: 250px;
-    }
-
-    .depoimento-cliente {
-        flex-direction: column;
-        align-items: center;
-        height: 400px;
-    }
-
-    .box-cliente h3 {
-        text-align: center;
-    }
-
-    .sobre h2,
-    .servicos h2,
-    .depoimentos h2,
-    .contato h2 {
-        text-align: center;
-        font-size: 2rem;
-    }
-
-    .box-input {
-        flex-direction: column;
-        width: 100%;
-        gap: 20px;
-    }
-
-    input {
-        width: 100% !important;
-    }
-
-    .contato button {
-        float: none;
+    .header__menu-mobile-btn {
         display: block;
-        margin: 20px auto 0 auto;
+    }
+
+    .header__nav-mobile {
+        display: none;
+        width: 100vw;
+        min-height: 100vh;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 100px 20px;
+        border-left: none;
+        border-bottom: none;
+    }
+
+    .main__hero {
+        flex-direction: column;
+        gap: 20px;
         text-align: center;
     }
 
-    .depoimento-cliente p {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services__list {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services__card {
+        flex: 1 1 100%;
         max-width: 100%;
-        text-align: center;
-    }
-
-    .container {
-        background-color: var(--cinza-card);
-
-    }
-
-    .depoimento-cliente {
         width: 100%;
-        height: auto;
     }
 
-    .chamada-agencia h1 {
+    .contact__inputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact__input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .main__hero-title {
         font-size: 2rem;
+    }
+
+    .about__title,
+    .services__title,
+    .testimonials__title,
+    .contact__title {
+        font-size: 1.5rem;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        gap: 10px;
     }
 }

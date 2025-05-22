@@ -22,129 +22,117 @@
 </head>
 
 <body>
-    <header>
-        <!-- Logo da agência -->
-        <a id="logo" href="index.html">Criativa Web</a>
-        <!-- Menu de navegação desktop -->
-        <nav>
-            <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="#sobre">sobre</a></li>
-                <li><a href="#depoimentos">depoimentos</a></li>
-                <li><a href="#contato">contato</a></li>
+    <header class="header">
+        <a class="header__logo" href="index.html">Criativa Web</a>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html">Home</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#sobre">Sobre</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#depoimentos">Depoimentos</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#contato">Contato</a></li>
             </ul>
         </nav>
-        <!-- Botão do menu mobile (hambúrguer) -->
-        <button onclick="menuMobile()" id="menu-mobile">
+        <button class="header__menu-mobile-btn" id="menu-mobile" onclick="menuMobile()">
             <i class="fas fa-bars"></i>
         </button>
-        <!-- Menu mobile (aparece em telas pequenas) -->
-        <nav id="mobile">
-            <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="#sobre">sobre</a></li>
-                <li><a href="#depoimentos">depoimentos</a></li>
-                <li><a href="#contato">contato</a></li>
+        <nav class="header__nav-mobile" id="mobile">
+            <ul class="header__menu-mobile">
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html">Home</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#sobre">Sobre</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#depoimentos">Depoimentos</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <!-- Seção principal com chamada e imagem -->
-        <section class="container">
-            <section>
-                <div class="chamada-agencia">
-                    <h1>design <br> digital para <br> impactar</h1>
-                    <p>Somos uma agéncia apaixonada <br> por criar experiéncias digitais <br> incliveis.</p>
-                    <button><a href="#contato">entre em contato</a> </button>
-                </div>
-            </section>
-            <section class="imagem-destaque">
-                <img src="assets/image/img.png" alt="">
-            </section>
+    <main class="main">
+        <section class="main__hero">
+            <div class="main__hero-content">
+                <h1 class="main__hero-title">design <br> digital para <br> impactar</h1>
+                <p class="main__hero-text">Somos uma agência apaixonada <br> por criar experiências digitais <br>
+                    incríveis.</p>
+                <a class="main__hero-btn" href="#contato">entre em contato</a>
+            </div>
+            <div class="main__hero-image">
+                <img src="assets/image/img.png" alt="Imagem de destaque">
+            </div>
         </section>
-        <!-- Seção sobre a agência -->
-        <sention class="sobre" id="sobre">
-            <h2>sobre nós</h2>
-            <p>Combinamos criatividade, tecnologia e <br> estrategia para tranformar ideias em <br> realidade. Nossa
-                missão é ajudar nossos <br> clientes a alcançar seus objetivos <br> atraves de soluçoes digitais
-                inovadoras.</p>
-        </sention>
-        <!-- Seção de serviços oferecidos pela agência -->
-        <section class="servicos">
-            <h2>serviços</h2>
-            <div class="box-servicos">
-                <div class="card-servico">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Criação de sites responsivos e modernos.</p>
+        <section class="about" id="sobre">
+            <h2 class="about__title">sobre nós</h2>
+            <p class="about__text">
+                Combinamos criatividade, tecnologia e <br> estratégia para transformar ideias em <br> realidade. Nossa
+                missão é ajudar nossos <br> clientes a alcançar seus objetivos <br> através de soluções digitais
+                inovadoras.
+            </p>
+        </section>
+        <section class="services">
+            <h2 class="services__title">serviços</h2>
+            <div class="services__list">
+                <div class="services__card">
+                    <i class="fas fa-laptop-code services__icon"></i>
+                    <h3 class="services__card-title">Desenvolvimento Web</h3>
+                    <p class="services__card-text">Criação de sites responsivos e modernos.</p>
                 </div>
-                <div class="card-servico">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Design Gráfico</h3>
-                    <p>Criação de identidade visual e materiais gráficos.</p>
+                <div class="services__card">
+                    <i class="fas fa-paint-brush services__icon"></i>
+                    <h3 class="services__card-title">Design Gráfico</h3>
+                    <p class="services__card-text">Criação de identidade visual e materiais gráficos.</p>
                 </div>
-                <div class="card-servico">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Aplicativos Móveis</h3>
-                    <p>Desenvolvimento de aplicativos para Android e iOS.</p>
+                <div class="services__card">
+                    <i class="fas fa-mobile-alt services__icon"></i>
+                    <h3 class="services__card-title">Aplicativos Móveis</h3>
+                    <p class="services__card-text">Desenvolvimento de aplicativos para Android e iOS.</p>
                 </div>
-                <div class="card-servico">
-                    <i class="fas fa-search"></i>
-                    <h3>SEO</h3>
-                    <p>Otimização para motores de busca.</p>
+                <div class="services__card">
+                    <i class="fas fa-search services__icon"></i>
+                    <h3 class="services__card-title">SEO</h3>
+                    <p class="services__card-text">Otimização para motores de busca.</p>
                 </div>
             </div>
         </section>
-        <!-- Seção de depoimentos com carrossel -->
         <section class="depoimentos" id="depoimentos">
-            <h2>depoimentos</h2>
-            <div class="depoimento-cliente" id="depoimento-cliente">
+            <h2 class="depoimentos__titulo">Depoimentos</h2>
+            <div class="depoimentos__conteudo" id="depoimento-cliente">
                 <!-- O JS vai preencher aqui -->
             </div>
-            <div class="box-btn">
-                <button id="voltar"><i class="fas fa-chevron-left"></i></button>
-                <button id="proximo"><i class="fas fa-chevron-right"></i></button>
+            <div class="depoimentos__controles">
+                <button class="depoimentos__btn" id="voltar"><i class="fas fa-chevron-left"></i></button>
+                <button class="depoimentos__btn" id="proximo"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
-        <!-- Seção de contato com formulário -->
-        <section class="contato" id="contato">
-            <h2>Entre em contato</h2>
-            <form action="">
-                <div class="box-input">
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="Email" required>
+        <section class="contact" id="contato">
+            <h2 class="contact__title">Entre em contato</h2>
+            <form class="contact__form" action="">
+                <div class="contact__inputs">
+                    <input class="contact__input" type="text" placeholder="Nome" required>
+                    <input class="contact__input" type="email" placeholder="Email" required>
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Mensagem" required></textarea>
-                <button type="submit">enviar mensagem</button>
+                <textarea class="contact__textarea" cols="30" rows="10" placeholder="Mensagem" required></textarea>
+                <button class="contact__submit" type="submit">enviar mensagem</button>
             </form>
         </section>
     </main>
-    <!-- Rodapé com redes sociais e direitos autorais -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-social">
-                <ul class="social-icons">
-                    <li>
-                        <a href="#" class="icon" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="footer__container">
+            <ul class="footer__social">
+                <li>
+                    <a href="#" class="footer__icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer__icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer__icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <span>&copy; 2025 Agência Criativa Web. Todos os direitos reservados.</span>
+        <span class="footer__copyright">&copy; 2025 Agência Criativa Web. Todos os direitos reservados.</span>
     </footer>
-    <!-- Scripts JS do menu mobile e depoimentos -->
     <script src="assets/js/menu-mobile.js"></script>
     <script src="assets/js/depoimentos.js"></script>
 </body>

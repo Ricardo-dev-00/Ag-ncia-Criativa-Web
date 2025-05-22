@@ -1,12 +1,12 @@
 // Função para abrir/fechar o menu mobile ao clicar no botão
 function menuMobile() {
     const menu = document.getElementById("mobile");
-    // Alterna entre mostrar e esconder o menu
+    // Alterna entre mostrar e esconder o menu mobile
     menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 
 // Fecha o menu mobile ao clicar em qualquer link dentro dele
-document.querySelectorAll('#mobile a').forEach(link => {
+document.querySelectorAll('.header__menu-mobile .header__menu-link').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById("mobile").style.display = "none";
     });
