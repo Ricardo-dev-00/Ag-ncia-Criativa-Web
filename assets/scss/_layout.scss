@@ -1,0 +1,134 @@
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// Layout geral: header, main, footer, containers
+.header {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: $cor-texto;
+    padding: $espaco-sm 0;
+    @include flex-center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+    &__logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $cor-texto;
+    }
+
+    &__nav {
+        @include responsivo(sm) {
+            display: none;
+        }
+    }
+
+    .header__menu-link {
+        color: $cor-texto;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $cor-destaque;
+        }
+    }
+
+
+    &__nav-mobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: $cor-primaria;
+        width: 100%;
+        z-index: 10;
+
+
+        @include responsivo(sm) {
+            display: block;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        gap: $espaco-md;
+
+    }
+
+    &__menu-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: $espaco-sm;
+        padding: $espaco-sm;
+        align-items: center;
+        z-index: 10;
+    }
+
+    &__menu-link {
+        color: $cor-branca;
+        font-weight: 500;
+        text-align: center;
+        transition: color 0.2s;
+        z-index: 20;
+
+        &:hover {
+            color: $cor-destaque;
+        }
+    }
+
+    &__menu-mobile-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: $cor-texto;
+        font-size: 2rem;
+        cursor: pointer;
+
+        @include responsivo(sm) {
+            display: block;
+        }
+    }
+
+    // Garante cor branca no menu mobile
+    &__menu-mobile .header__menu-link {
+        color: $cor-branca !important;
+    }
+}
+
+.main {
+    padding: $espaco-lg 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer {
+
+    color: $cor-texto;
+    padding: $espaco-md 0 $espaco-sm 0;
+    text-align: center;
+
+    &__container {
+        @include flex-center;
+        flex-direction: column;
+        gap: $espaco-sm;
+    }
+
+    &__social {
+        display: flex;
+        gap: $espaco-sm;
+        justify-content: center;
+        margin-bottom: $espaco-xs;
+    }
+
+    &__icon {
+        color: $cor-texto;
+        font-size: 1.5rem;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $cor-destaque;
+        }
+    }
+}

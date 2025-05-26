@@ -23,8 +23,13 @@ let intervalo;       // Referência do intervalo do carrossel automático
 // Função para exibir um depoimento pelo índice
 function mostrarDepoimento(indice) {
     const depoimento = depoimentos[indice];
+    // Corrigir caminho relativo para garantir que funcione em qualquer ambiente
+    let fotoPath = depoimento.foto;
+    if (!fotoPath.startsWith('assets/')) {
+        fotoPath = 'assets/image/' + fotoPath.replace(/^.*[\\\/]/, '');
+    }
     document.getElementById("depoimento-cliente").innerHTML = `
-        <div class="depoimentos__foto" style="background-image: url('${depoimento.foto}')"></div>
+        <div class="depoimentos__foto" style="background-image: url('${fotoPath}')"></div>
         <div class="depoimentos__box">
             <p class="depoimentos__texto">${depoimento.texto}</p>
             <h3 class="depoimentos__nome">${depoimento.nome}</h3>
